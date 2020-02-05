@@ -1,0 +1,117 @@
+@import '../variables.scss';
+
+.wisdom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.animation-start {
+  animation: zoomOutW 0.4s linear forwards, fadeOutW 0.4s linear forwards;
+
+  .wisdom-content {
+    animation: slideOutW 0.4s ease-in-out forwards;
+  }
+}
+
+.animation-end {
+  animation: zoomInW 0.4s linear forwards, fadeInW 0.4s linear forwards;
+
+  .wisdom-content {
+    animation: slideInW 0.4s ease-in-out;
+  }
+}
+
+.wisdom-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $overlay;
+  z-index: 2;
+}
+
+.wisdom-content {
+  display: inline-block;
+  margin: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  width: auto;
+  max-width: 80%;
+  z-index: 3;
+  text-align: left;
+  cursor: pointer;
+  font-family: 'Open Sans Bold';
+
+  span {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+@keyframes zoomInW {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOutW {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes slideInW {
+  from {
+    transform: translateX(120%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutW {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+@keyframes fadeInW {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutW {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
