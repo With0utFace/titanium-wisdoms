@@ -1,4 +1,4 @@
-import Wisdoms from '../dummy-data/index.json';
+import Wisdoms from '../dummy-data/wisdoms.json';
 import * as Types from './types';
 
 import { ActionInterface, StoreInterface } from 'interfaces';

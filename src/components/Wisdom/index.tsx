@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
 import Spinner from 'components/Spinner';
-
+import Row from 'components/WisdomRow';
 import { StoreInterface } from 'interfaces';
 
 import 'assets/styles/components/Wisdom.scss';
@@ -47,7 +46,6 @@ const Wisdom = () => {
   };
 
   if (current) {
-    const wisdomContent = current.title.split('\n').map((el: string) => <span key={el}>{el}</span>);
     return (
       <div
         className={`wisdom ${classes}`}
@@ -57,7 +55,9 @@ const Wisdom = () => {
       >
         <div className="wisdom-overlay"></div>
         <div className="wisdom-content" onClick={() => handleClick()}>
-          {wisdomContent}
+          <div>
+            <Row current={current.content} />
+          </div>
         </div>
       </div>
     );

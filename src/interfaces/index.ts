@@ -3,7 +3,10 @@ import React from 'react';
 export interface WisdomInterface {
   id: number;
   image: string;
-  title: string;
+  content: {
+    wisdom: string;
+    author: string;
+  }[];
 }
 
 export interface ActionInterface {

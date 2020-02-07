@@ -15,20 +15,19 @@
 
 @font-face {
   font-family: 'Intro';
-  src: url('./assets/fonts/Intro/Intro.ttf') format('truetype');
+  src: url('./assets/fonts/Intro/Intro.otf') format('opentype');
 }
 
 html {
-  font-size: 40px;
+  font-size: 36px;
   height: 100%;
 }
 
 body {
   margin: 0;
   height: 100%;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+  font-family: 'Intro', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

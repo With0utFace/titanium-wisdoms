@@ -2,7 +2,7 @@
 
 .navigation-wrapper {
   width: 100%;
-  padding: 25px 30px 70px 30px;
+  padding: 25px 100px 70px 100px;
   position: fixed;
   top: 0;
   left: 0;
@@ -29,11 +29,11 @@
 }
 
 .navigation-title {
-  color: $color-yellow;
+  color: $color-white;
   font-size: 0.8rem;
   text-transform: uppercase;
-  font-family: 'Intro';
   text-decoration: none;
+  transition: 0.4s;
 }
 
 .navigation-controls {

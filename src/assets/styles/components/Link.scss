@@ -5,11 +5,8 @@
   text-decoration: none;
   font-size: 0.5rem;
   color: $color-white;
-  font-family: 'Open Sans Bold';
   transition: all 0.4s;
-  border: 2px solid transparent;
   padding: 15px;
-  border-radius: 10px;
 }
 
 .nav-link:not(:last-child) {

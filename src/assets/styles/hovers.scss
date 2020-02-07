@@ -8,7 +8,6 @@
 
   .nav-link:hover {
     color: $color-yellow;
-    border-color: $color-yellow;
   }
 
   .navigation-wrapper:hover {
@@ -18,5 +17,9 @@
     .navigation-content a.nav-link {
       font-size: 0.7rem;
     }
+  }
+
+  .navigation-title:hover {
+    color: $color-yellow;
   }
 }
