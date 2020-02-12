@@ -7,37 +7,55 @@ import HomePageWrapper from 'containers/HomePageWrapper';
 import Page404 from 'components/Page404';
 import Spinner from 'components/Spinner';
 
-import { incrementSteps, resetSteps, setFirstWisdom } from 'store/actions';
+import { incrementSteps, resetSteps, setFirstWisdom, fetchWisdoms } from 'store/actions';
 
 import { StoreInterface } from 'interfaces';
+import { getWisdoms } from 'api';
+import DummyWisdoms from 'dummy-data/wisdoms.json';
 
 import 'assets/styles/containers/App.scss';
 
 const App = () => {
-  const { wisdoms, steps, firstWisdomId } = useSelector((s: StoreInterface) => s);
+  const { wisdoms, steps, firstWisdomId, homeAnimationCompleted } = useSelector(
+    (s: StoreInterface) => s
+  );
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
 
   useEffect(() => {
-    if (!firstWisdomId) {
+    if (!wisdoms) {
+      getWisdoms()
+        .then(res => {
+          dispatch(fetchWisdoms(res));
+        })
+        .catch(err => {
+          console.log(err);
+          dispatch(fetchWisdoms(DummyWisdoms));
+        });
+    }
+    if (wisdoms) {
       dispatch(setFirstWisdom());
     }
+  }, [dispatch, wisdoms]);
+
+  useEffect(() => {
     if (location.pathname === '/home') {
       const interval = steps % 2 === 0 ? 200 : 2000;
-      if (steps <= 4) {
+      if (!homeAnimationCompleted) {
         setTimeout(() => {
           dispatch(incrementSteps());
         }, interval);
       }
-      if (steps >= 5) {
-        setTimeout(() => {
-          history.push(`/wisdoms/${firstWisdomId}`);
-          dispatch(resetSteps());
-        }, 2000);
-      }
     }
-  }, [dispatch, firstWisdomId, history, location.pathname, steps]);
+  }, [dispatch, homeAnimationCompleted, location.pathname, steps]);
+
+  useEffect(() => {
+    if (homeAnimationCompleted) {
+      history.push(`/wisdoms/${firstWisdomId}`);
+      dispatch(resetSteps());
+    }
+  }, [dispatch, firstWisdomId, history, homeAnimationCompleted]);
 
   if (wisdoms) {
     return (

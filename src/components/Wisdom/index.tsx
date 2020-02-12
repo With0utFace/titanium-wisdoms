@@ -53,9 +53,8 @@ const Wisdom = () => {
           backgroundImage: `url(${current.image})`,
         }}
       >
-        <div className="wisdom-overlay"></div>
-        <div className="wisdom-content" onClick={() => handleClick()}>
-          <div>
+        <div className="wisdom-content">
+          <div className="one-wisdom-wrapper" onClick={() => handleClick()}>
             <Row current={current.content} />
           </div>
         </div>

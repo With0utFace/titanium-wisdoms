@@ -13,12 +13,32 @@
     font-size: 22px;
   }
 
+  .navigation-wrapper {
+    padding: 25px 40px 70px 40px;
+  }
+
   .main-text {
     font-size: 2.1rem;
   }
 
   .nav-link:not(:last-child) {
     margin-right: 15px;
+  }
+
+  .one-wisdom-wrapper {
+    max-width: 85%;
+  }
+
+  .wisdom-row.single {
+    font-size: 1.9rem;
+  }
+
+  .wisdom-row.single.small {
+    font-size: 1.2rem;
+  }
+
+  .wisdom-row.single {
+    max-width: 80%;
   }
 }
 
@@ -28,7 +48,6 @@
   }
   .wisdom-content {
     font-size: 0.6rem;
-    max-width: 90%;
   }
 
   .navigation-wrapper {
@@ -52,6 +71,24 @@
   .navigation-controls {
     order: 1;
     justify-content: center;
+  }
+
+  .one-wisdom-wrapper {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wisdom-content {
+    font-size: 0.5rem;
+  }
+
+  .wisdom-row.single {
+    font-size: 1.4rem;
+  }
+
+  .wisdom-row.single.small {
+    font-size: 0.8rem;
   }
 }
 

@@ -26,8 +26,8 @@ export interface TextComponentInterface {
 }
 
 export interface StoreInterface {
-  wisdoms: WisdomInterface[];
-  firstWisdomId: string | null;
+  wisdoms: WisdomInterface[] | null;
+  firstWisdomId: string | undefined;
   wisdomsMap: {
     prev: WisdomInterface | null;
     current: WisdomInterface | null;
@@ -36,6 +36,7 @@ export interface StoreInterface {
   isLoading: boolean;
   steps: number;
   shouldRedirect: boolean;
+  homeAnimationCompleted: boolean;
   homePageMessages: {
     [key: number]: string;
   };

@@ -1,5 +1,7 @@
 import * as Types from './types';
 
+import { WisdomInterface } from 'interfaces';
+
 export const incrementSteps = () => ({
   type: Types.INCREMENT_STEPS,
 });
@@ -18,6 +20,11 @@ export const getHomeMessages = () => ({
 
 export const setFirstWisdom = () => ({
   type: Types.SET_FIRST_WISDOM,
+});
+
+export const fetchWisdoms = (data: WisdomInterface[]) => ({
+  type: Types.FETCH_WISDOMS,
+  payload: data,
 });
 
 export const setSelectedWisdom = (id: string | undefined) => {
