@@ -4,13 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import WisdomWrapper from 'containers/WisdomWrapper';
 import HomePageWrapper from 'containers/HomePageWrapper';
+import AdditionForm from 'containers/AdditionForm';
 import Page404 from 'components/Page404';
 import Spinner from 'components/Spinner';
 
 import { incrementSteps, resetSteps, setFirstWisdom, fetchWisdoms } from 'store/actions';
-
 import { StoreInterface } from 'interfaces';
-import { getWisdoms } from 'api';
+import Api from 'api';
 import DummyWisdoms from 'dummy-data/wisdoms.json';
 
 import 'assets/styles/containers/App.scss';
@@ -25,7 +25,7 @@ const App = () => {
 
   useEffect(() => {
     if (!wisdoms) {
-      getWisdoms()
+      Api.getWisdoms()
         .then(res => {
           dispatch(fetchWisdoms(res));
         })
@@ -69,6 +69,9 @@ const App = () => {
           </Route>
           <Route exact path="/wisdoms/:id">
             <WisdomWrapper />
+          </Route>
+          <Route exact path="/add-wisdom">
+            <AdditionForm />
           </Route>
           <Route path="/404" component={Page404} />
           <Route path="*">
