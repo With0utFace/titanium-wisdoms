@@ -40,28 +40,8 @@ class Api {
     };
   };
 
-  copyWisdoms = () => {
-    this.request('get', this.wisdomsURL).then(response => {
-      this.request('put', this.wisdomsCopyURL, {
-        ...this.genReqCredentials('making copy of wisdoms', 'test@test.com', 'test@test.com'),
-        content: response.data.content,
-      }).catch(err => {
-        if (err.response.status === 409 || err.response.status === 422) {
-          this.request('get', this.wisdomsCopyURL).then(copy => {
-            this.request('put', this.wisdomsCopyURL, {
-              ...this.genReqCredentials('making copy of wisdoms', 'test@test.com', 'test@test.com'),
-              content: response.data.content,
-              sha: copy.data.sha,
-            });
-          });
-        }
-      });
-    });
-  };
-
   updateWisdoms = (dataToUpload: object) => {
     this.request('get', this.wisdomsURL).then(response => {
-      console.log('OUTPUT: Api -> updateWisdoms -> response', response);
       const decodedResponse = JSON.parse(Base64.decode(response.data.content));
       this.request('put', this.wisdomsURL, {
         ...this.genReqCredentials('adding data to wisdoms', 'test@test.com', 'test@test.com'),
@@ -72,7 +52,6 @@ class Api {
   };
 
   uploadWisdom = async (data: object) => {
-    await this.copyWisdoms();
     return await this.updateWisdoms(data);
   };
 }
