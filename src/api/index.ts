@@ -2,6 +2,17 @@ import axios from 'api/axios';
 
 import { Base64 } from 'js-base64';
 
+import { Octokit } from '@octokit/rest';
+
+const octokit = new Octokit({
+  auth: 'a1e74bd75b551cb171ff7e7bba3f1b477a90f351',
+});
+console.log('OUTPUT: octokit', octokit);
+
+octokit.repos.get({ owner: 'With0utFace', repo: 'titanium-wisdoms' }).then(data => {
+  console.log(data);
+});
+
 class Api {
   repository = '/repos/With0utFace/titanium-wisdoms';
   contents = '/contents/';
