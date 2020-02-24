@@ -47,9 +47,11 @@ class Api {
         ...this.genReqCredentials('adding data to wisdoms', 'test@test.com', 'test@test.com'),
         content: Base64.encode(JSON.stringify([...decodedResponse, dataToUpload])),
         sha: response.data.sha,
-      }).then(done => {
-        console.log('sent', done);
-      });
+      })
+        .then(done => {
+          console.log('sent', done);
+        })
+        .catch(err => console.log('error', err));
     });
   };
 

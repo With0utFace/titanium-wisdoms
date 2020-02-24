@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Api from 'api';
 import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
-import { StoreInterface } from 'interfaces';
+import { State } from 'interfaces';
 import Notification from 'components/Notification';
 
 import 'assets/styles/containers/AdditionForm.scss';
@@ -11,7 +11,7 @@ type contentElement = { wisdom: string; author: string };
 
 const AdditionForm = () => {
   const { register, handleSubmit, errors } = useForm();
-  const { wisdoms } = useSelector((s: StoreInterface) => s);
+  const { wisdoms } = useSelector((s: State) => s.main);
 
   const submitWisdom = (data: any) => {
     console.log(data);
