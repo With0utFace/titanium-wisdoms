@@ -10,7 +10,7 @@ import Spinner from 'components/Spinner';
 
 import { incrementSteps, resetSteps, setFirstWisdom, fetchWisdoms } from 'store/main/actions';
 import { State } from 'interfaces';
-import Api from 'api';
+import { getWisdoms } from 'api';
 import DummyWisdoms from 'dummy-data/wisdoms.json';
 
 import 'assets/styles/containers/App.scss';
@@ -25,7 +25,7 @@ const App = () => {
 
   useEffect(() => {
     if (!wisdoms) {
-      Api.getWisdoms()
+      getWisdoms()
         .then(res => {
           dispatch(fetchWisdoms(res));
         })

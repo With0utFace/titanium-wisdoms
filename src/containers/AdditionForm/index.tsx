@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Api from 'api';
+import { uploadWisdom } from 'store/main/actions';
 import { useForm } from 'react-hook-form';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { State } from 'interfaces';
 import Notification from 'components/Notification';
 
@@ -12,12 +12,25 @@ type contentElement = { wisdom: string; author: string };
 const AdditionForm = () => {
   const { register, handleSubmit, errors } = useForm();
   const { wisdoms } = useSelector((s: State) => s.main);
+  const { disableSubmit } = useSelector((s: State) => s.notifications);
+  const dispatch = useDispatch();
+
+  const formTemplate = {
+    id: 0,
+    image: '',
+    content: [
+      {
+        wisdom: '',
+        author: '',
+      },
+    ],
+  };
+
+  const [wForm, setWForm] = useState(formTemplate);
 
   const submitWisdom = (data: any) => {
-    console.log(data);
-    console.log(wForm);
     const transformedContent: contentElement[] = [];
-    wForm.content.map((el, i) => {
+    wForm.content.map((_, i) => {
       return transformedContent.push({
         wisdom: data[`wisdom-${i}`],
         author: data[`author-${i}`],
@@ -33,10 +46,9 @@ const AdditionForm = () => {
       image: data.image,
       content: transformedContent,
     };
-    console.log('OUTPUT: submitWisdom -> objectToSubmit', objectToSubmit);
 
-    setWForm(objectToSubmit);
-    Api.uploadWisdom(objectToSubmit);
+    setWForm(formTemplate);
+    dispatch(uploadWisdom(objectToSubmit));
   };
 
   const addRow = () => {
@@ -46,37 +58,34 @@ const AdditionForm = () => {
     });
   };
 
-  const [wForm, setWForm] = useState({
-    id: 0,
-    image: '',
-    content: [
-      {
-        wisdom: '',
-        author: '',
-      },
-    ],
-  });
   return (
     <div className="wisdom-form-wrapper">
       <Notification />
-      {/* <p>bla</p> */}
+      <div className="form-title">
+        Привет чувак , тут ты можешь залить свою шутку. Она может быть из одной реплики или больше и
+        добавь УРЛ картинки, постарайся по качественнее. Ну давай.
+      </div>
       <form onSubmit={handleSubmit(submitWisdom)} className="addition-form">
-        <input name="image" ref={register({ required: true })} placeholder="Wisdom Image" />
-        {errors.image && <span>required</span>}
-        {wForm.content.map((row, i) => {
+        <input
+          name="image"
+          ref={register({ required: true })}
+          placeholder="УРЛ картинки"
+          className={`image-input ${errors.image ? 'error' : ''}`}
+        />
+        {wForm.content.map((_, i) => {
           return (
             <div className="inputs-row" key={i}>
               <input
                 name={`wisdom-${i}`}
                 ref={register({ required: true })}
-                className="input-wisdom"
-                placeholder="Wisdom"
+                className={`input-wisdom ${errors[`wisdom-${i}`] ? 'error' : ''}`}
+                placeholder={`Реплика ${i + 1}`}
               />
               <input
                 name={`author-${i}`}
-                ref={register({ required: true })}
+                ref={register()}
                 className="input-author"
-                placeholder="Author"
+                placeholder="Имя"
               />
             </div>
           );
@@ -84,7 +93,11 @@ const AdditionForm = () => {
         <button onClick={addRow} type="button" className="button add-row">
           Add new row
         </button>
-        <button type="submit" className="button submit">
+        <button
+          type="submit"
+          className={`button submit ${disableSubmit ? 'disabled' : ''}`}
+          disabled={disableSubmit}
+        >
           submit
         </button>
       </form>

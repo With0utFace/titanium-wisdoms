@@ -44,7 +44,9 @@ export interface StoreInterface {
 
 export interface NotificationInterface {
   isLoading: boolean;
-  status: string | null;
+  status: number | null;
+  isActive: boolean;
+  disableSubmit: boolean;
 }
 
 export interface State {

@@ -1,5 +1,15 @@
 import * as Types from './types';
 
+import { request, wisdomsURL, genReqCredentials, getWisdoms } from 'api';
+import { Dispatch } from 'react';
+
+import {
+  setNotificationIsLoading,
+  setStatus,
+  disableSubmit,
+  setIsActive,
+} from 'store/notification/actions';
+
 import { WisdomInterface } from 'interfaces';
 
 export const incrementSteps = () => ({
@@ -40,3 +50,47 @@ export const setSelectedWisdom = (id: string | undefined) => {
 const setIsLoading = () => ({
   type: Types.SET_ISLOADING,
 });
+
+export const uploadWisdom = (data: WisdomInterface) => (
+  dispatch: Dispatch<{ type: string; payload?: any } | Function>
+) => {
+  dispatch(setNotificationIsLoading());
+  dispatch(disableSubmit(true));
+  dispatch(() => {
+    request('get', wisdomsURL).then(response => {
+      const decodedResponse = JSON.parse(Base64.decode(response.data.content));
+      request('put', wisdomsURL, {
+        ...genReqCredentials('adding data to wisdoms', 'test@test.com', 'test@test.com'),
+        content: Base64.encode(JSON.stringify([...decodedResponse, data])),
+        sha: response.data.sha,
+      })
+        .then(succeed => {
+          dispatch(setStatus(succeed.status));
+
+          dispatch(setIsActive(true));
+          setTimeout(() => {
+            dispatch(setIsActive(false));
+          }, 3000);
+
+          getWisdoms().then(data => {
+            dispatch(fetchWisdoms(data));
+            setTimeout(() => {
+              dispatch(disableSubmit(false));
+            }, 1000);
+          });
+        })
+        .catch(error => {
+          dispatch(setStatus(error.response.status));
+
+          dispatch(setIsActive(true));
+          setTimeout(() => {
+            dispatch(disableSubmit(false));
+          }, 1000);
+
+          setTimeout(() => {
+            dispatch(setIsActive(false));
+          }, 3000);
+        });
+    });
+  });
+};
