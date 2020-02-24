@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux';
 
 import TextComponent from 'components/TextComponent';
 
-import { StoreInterface } from 'interfaces';
+import { State } from 'interfaces';
 
 const HomePageWrapper = () => {
-  const { homePageMessages, steps } = useSelector((s: StoreInterface) => s);
+  const { homePageMessages, steps } = useSelector((s: State) => s.main);
 
   if (steps % 2 === 0) {
     return null;

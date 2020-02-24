@@ -8,8 +8,8 @@ import AdditionForm from 'containers/AdditionForm';
 import Page404 from 'components/Page404';
 import Spinner from 'components/Spinner';
 
-import { incrementSteps, resetSteps, setFirstWisdom, fetchWisdoms } from 'store/actions';
-import { StoreInterface } from 'interfaces';
+import { incrementSteps, resetSteps, setFirstWisdom, fetchWisdoms } from 'store/main/actions';
+import { State } from 'interfaces';
 import Api from 'api';
 import DummyWisdoms from 'dummy-data/wisdoms.json';
 
@@ -17,7 +17,7 @@ import 'assets/styles/containers/App.scss';
 
 const App = () => {
   const { wisdoms, steps, firstWisdomId, homeAnimationCompleted } = useSelector(
-    (s: StoreInterface) => s
+    (s: State) => s.main
   );
   const dispatch = useDispatch();
   const history = useHistory();

@@ -1,0 +1,24 @@
+@import '../variables.scss';
+
+.notification-wrapper {
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: $color-black;
+  font-size: 2rem;
+  transition: 0.4s;
+
+  &.success {
+    background-color: green;
+  }
+
+  &.error {
+    background-color: red;
+  }
+
+  &.active {
+    top: 50px;
+  }
+}

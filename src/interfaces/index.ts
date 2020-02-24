@@ -41,3 +41,13 @@ export interface StoreInterface {
     [key: number]: string;
   };
 }
+
+export interface NotificationInterface {
+  isLoading: boolean;
+  status: string | null;
+}
+
+export interface State {
+  main: StoreInterface;
+  notifications: NotificationInterface;
+}

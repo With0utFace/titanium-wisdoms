@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Spinner from 'components/Spinner';
 import Row from 'components/WisdomRow';
-import { StoreInterface } from 'interfaces';
+import { State } from 'interfaces';
 
 import 'assets/styles/components/Wisdom.scss';
 
@@ -17,7 +17,7 @@ const Wisdom = () => {
   const {
     wisdoms,
     wisdomsMap: { current, next },
-  } = useSelector((s: StoreInterface) => s);
+  } = useSelector((s: State) => s.main);
   const history = useHistory();
 
   useEffect(() => {

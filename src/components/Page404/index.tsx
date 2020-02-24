@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { resetRedirect } from 'store/actions';
+import { resetRedirect } from 'store/main/actions';
 
 import 'assets/styles/components/404.scss';
 
