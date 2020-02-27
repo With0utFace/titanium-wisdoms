@@ -1,0 +1,161 @@
+@keyframes zoomInW {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOutW {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes slideInW {
+  from {
+    transform: translateX(120%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutW {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+@keyframes fadeInW {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutW {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes authorSlide {
+  from {
+    transform: translateY(120%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(150%);
+  }
+  15% {
+    transform: translateX(-25%);
+  }
+  30% {
+    transform: translateX(0);
+  }
+
+  60% {
+    transform: translateX(0);
+  }
+
+  85% {
+    transform: translateY(35%);
+  }
+
+  to {
+    transform: translateY(-1600%);
+  }
+}
+
+@keyframes zoomInText {
+  from {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes navSlide {
+  from {
+    transform: translateY(-150%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wisdomControlsDrop {
+  from {
+    opacity: 1;
+    transform: translateY(-2600%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wisdomFormSlide {
+  from {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

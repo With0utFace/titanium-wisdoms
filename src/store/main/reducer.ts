@@ -19,6 +19,7 @@ const initialState: StoreInterface = {
     3: 'это самолет?',
     5: 'это #titaniumWisdom!',
   },
+  addWisdomModalOpen: false,
 };
 
 const Store = (state = initialState, action: ActionInterface): StoreInterface => {
@@ -32,6 +33,11 @@ const Store = (state = initialState, action: ActionInterface): StoreInterface =>
       return {
         ...state,
         isLoading: true,
+      };
+    case Types.ADD_WISDOM_MODAL_OPEN:
+      return {
+        ...state,
+        addWisdomModalOpen: action.payload,
       };
     case Types.INCREMENT_STEPS:
       if (state.steps === 5) {

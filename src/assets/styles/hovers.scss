@@ -10,24 +10,22 @@
     color: $color-yellow;
   }
 
-  .navigation-wrapper:hover {
-    .navigation-overlay {
-      opacity: 1;
-    }
-    .navigation-content a.nav-link {
-      font-size: 0.7rem;
-    }
-
-    .navigation-title {
-      font-size: 0.7rem;
-    }
-  }
-
   .navigation-title:hover {
     color: $color-yellow;
   }
 
   .addition-form .button:hover {
     color: $color-yellow;
+  }
+
+  .wisdom-form-wrapper .close-form:hover {
+    &:before {
+      background-color: $color-yellow;
+      transform: rotate(135deg);
+    }
+    &:after {
+      background-color: $color-yellow;
+      transform: rotate(-135deg);
+    }
   }
 }

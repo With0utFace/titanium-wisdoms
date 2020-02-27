@@ -47,8 +47,13 @@ export const setSelectedWisdom = (id: string | undefined) => {
   };
 };
 
-const setIsLoading = () => ({
+export const setIsLoading = () => ({
   type: Types.SET_ISLOADING,
+});
+
+export const setFormModalOpen = (value: boolean) => ({
+  type: Types.ADD_WISDOM_MODAL_OPEN,
+  payload: value,
 });
 
 export const uploadWisdom = (data: WisdomInterface) => (

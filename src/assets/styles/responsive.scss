@@ -1,3 +1,5 @@
+@import 'animations.scss';
+
 @media screen and (max-width: 1366px) {
   html {
     font-size: 26px;
@@ -89,14 +91,5 @@
 
   .wisdom-row.single.small {
     font-size: 0.8rem;
-  }
-}
-
-@keyframes navSlide {
-  from {
-    transform: translateY(-150%);
-  }
-  to {
-    transform: translateY(0);
   }
 }

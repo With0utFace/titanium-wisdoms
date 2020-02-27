@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import WisdomWrapper from 'containers/WisdomWrapper';
 import HomePageWrapper from 'containers/HomePageWrapper';
-import AdditionForm from 'containers/AdditionForm';
 import Page404 from 'components/Page404';
 import Spinner from 'components/Spinner';
 
@@ -69,9 +68,6 @@ const App = () => {
           </Route>
           <Route exact path="/wisdoms/:id">
             <WisdomWrapper />
-          </Route>
-          <Route exact path="/add-wisdom">
-            <AdditionForm />
           </Route>
           <Route path="/404" component={Page404} />
           <Route path="*">

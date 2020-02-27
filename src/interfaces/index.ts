@@ -18,6 +18,7 @@ export interface LinkInterface {
   to: string;
   children: React.ReactNode;
   blank: boolean;
+  props?: any;
 }
 
 export interface TextComponentInterface {
@@ -40,6 +41,7 @@ export interface StoreInterface {
   homePageMessages: {
     [key: number]: string;
   };
+  addWisdomModalOpen: boolean;
 }
 
 export interface NotificationInterface {

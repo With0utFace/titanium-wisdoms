@@ -11,7 +11,7 @@ type contentElement = { wisdom: string; author: string };
 
 const AdditionForm = () => {
   const { register, handleSubmit, errors } = useForm();
-  const { wisdoms } = useSelector((s: State) => s.main);
+  const { wisdoms, addWisdomModalOpen } = useSelector((s: State) => s.main);
   const { disableSubmit } = useSelector((s: State) => s.notifications);
   const dispatch = useDispatch();
 
@@ -58,50 +58,65 @@ const AdditionForm = () => {
     });
   };
 
+  const formBackgroundURL =
+    'https://images.unsplash.com/photo-1571733916769-85cdd0893bdf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1266&q=80';
+
   return (
-    <div className="wisdom-form-wrapper">
+    <>
       <Notification />
-      <div className="form-title">
-        Привет чувак , тут ты можешь залить свою шутку. Она может быть из одной реплики или больше и
-        добавь УРЛ картинки, постарайся по качественнее. Ну давай.
-      </div>
-      <form onSubmit={handleSubmit(submitWisdom)} className="addition-form">
-        <input
-          name="image"
-          ref={register({ required: true })}
-          placeholder="УРЛ картинки"
-          className={`image-input ${errors.image ? 'error' : ''}`}
-        />
-        {wForm.content.map((_, i) => {
-          return (
-            <div className="inputs-row" key={i}>
+      <div
+        className={`wisdom-form-wrapper ${addWisdomModalOpen ? 'active' : ''}`}
+        style={{ backgroundImage: `url(${formBackgroundURL})` }}
+      >
+        <div className="close-form"></div>
+        <div className="wisdom-form-content">
+          <div className="form-title">
+            Привет чувак , тут ты можешь залить свою шутку. Она может быть из одной реплики или
+            больше и добавь УРЛ картинки, постарайся по качественнее. Ну давай.
+          </div>
+          <form onSubmit={handleSubmit(submitWisdom)} className="addition-form" autoComplete="off">
+            <div className="form-inputs">
               <input
-                name={`wisdom-${i}`}
+                name="image"
                 ref={register({ required: true })}
-                className={`input-wisdom ${errors[`wisdom-${i}`] ? 'error' : ''}`}
-                placeholder={`Реплика ${i + 1}`}
+                placeholder="УРЛ картинки"
+                className={`image-input ${errors.image ? 'error' : ''}`}
               />
-              <input
-                name={`author-${i}`}
-                ref={register()}
-                className="input-author"
-                placeholder="Имя"
-              />
+              {wForm.content.map((_, i) => {
+                return (
+                  <div className="inputs-row" key={i}>
+                    <input
+                      name={`wisdom-${i}`}
+                      ref={register({ required: true })}
+                      className={`input-wisdom ${errors[`wisdom-${i}`] ? 'error' : ''}`}
+                      placeholder={`Реплика ${i + 1}`}
+                    />
+                    <input
+                      name={`author-${i}`}
+                      ref={register()}
+                      className="input-author"
+                      placeholder="Имя"
+                    />
+                  </div>
+                );
+              })}
             </div>
-          );
-        })}
-        <button onClick={addRow} type="button" className="button add-row">
-          Add new row
-        </button>
-        <button
-          type="submit"
-          className={`button submit ${disableSubmit ? 'disabled' : ''}`}
-          disabled={disableSubmit}
-        >
-          submit
-        </button>
-      </form>
-    </div>
+            <div className="wisdom-form-controls">
+              <button onClick={addRow} type="button" className="button add-row">
+                добавить реплику
+              </button>
+              <button
+                type="submit"
+                className={`button submit ${disableSubmit ? 'disabled' : ''}`}
+                disabled={disableSubmit}
+              >
+                залить
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </>
   );
 };
 
