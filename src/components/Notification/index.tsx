@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { State } from 'interfaces';
 
-import 'assets/styles/components/Notification.scss';
+import './styles.scss';
 
 const Notification = () => {
   const { status, isActive } = useSelector((s: State) => s.notifications);

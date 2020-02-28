@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import { resetRedirect } from 'store/main/actions';
 
-import 'assets/styles/components/404.scss';
+import './styles.scss';
 
 const Page404 = () => {
   const dispatch = useDispatch();

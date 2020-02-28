@@ -7,7 +7,7 @@ import { setFormModalOpen } from 'store/main/actions';
 
 import { State } from 'interfaces';
 
-import 'assets/styles/containers/Navigation.scss';
+import './styles.scss';
 
 const Navigation = () => {
   const { addWisdomModalOpen } = useSelector((s: State) => s.main);
@@ -17,11 +17,12 @@ const Navigation = () => {
   return (
     <div className="navigation-wrapper">
       <div className="navigation-overlay"></div>
-      <div className="navigation-content">
-        <Link to="/home" className="navigation-title">
-          #titaniumwisdom
-        </Link>
-        {!addWisdomModalOpen && (
+      {!addWisdomModalOpen && (
+        <div className="navigation-content">
+          <Link to="/home" className="navigation-title">
+            #titaniumwisdom
+          </Link>
+
           <div className="navigation-controls">
             <CustomLink to="https://github.com/AlexanderC/nakla.fun/graphs/contributors" blank>
               Лица
@@ -30,8 +31,8 @@ const Navigation = () => {
               хочу добавить
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

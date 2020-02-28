@@ -2,6 +2,7 @@ import React from 'react';
 
 export interface WisdomInterface {
   id: number;
+  verified: boolean;
   image: string;
   content: {
     wisdom: string;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { LinkInterface } from 'interfaces';
 
-import 'assets/styles/components/Link.scss';
+import './styles.scss';
 
 const Link = ({ to, children, blank }: LinkInterface) => (
   <a href={to} target={blank ? '_blank' : undefined} className="nav-link">

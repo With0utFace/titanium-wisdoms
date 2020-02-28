@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { uploadWisdom } from 'store/main/actions';
 import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 import { State } from 'interfaces';
 import Notification from 'components/Notification';
 
-import 'assets/styles/containers/AdditionForm.scss';
+import { setFormModalOpen } from 'store/main/actions';
+
+import './styles.scss';
 
 type contentElement = { wisdom: string; author: string };
 
@@ -17,6 +19,7 @@ const AdditionForm = () => {
 
   const formTemplate = {
     id: 0,
+    verified: false,
     image: '',
     content: [
       {
@@ -28,6 +31,14 @@ const AdditionForm = () => {
 
   const [wForm, setWForm] = useState(formTemplate);
 
+  const [formStateClasses, setFormStateClasses] = useState('');
+  useEffect(() => {
+    if (addWisdomModalOpen) {
+      setFormStateClasses('active');
+    } else {
+    }
+  }, [addWisdomModalOpen]);
+
   const submitWisdom = (data: any) => {
     const transformedContent: contentElement[] = [];
     wForm.content.map((_, i) => {
@@ -36,6 +47,7 @@ const AdditionForm = () => {
         author: data[`author-${i}`],
       });
     });
+
     let generateId: number = 0;
     if (wisdoms) {
       generateId = wisdoms[wisdoms.length - 1].id + 1;
@@ -43,6 +55,7 @@ const AdditionForm = () => {
 
     const objectToSubmit = {
       id: generateId,
+      verified: false,
       image: data.image,
       content: transformedContent,
     };
@@ -57,6 +70,12 @@ const AdditionForm = () => {
       content: [...wForm.content, { wisdom: '', author: '' }],
     });
   };
+  const closeAdditionForm = () => {
+    setFormStateClasses('closed');
+    setTimeout(() => {
+      dispatch(setFormModalOpen(false));
+    }, 400);
+  };
 
   const formBackgroundURL =
     'https://images.unsplash.com/photo-1571733916769-85cdd0893bdf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1266&q=80';
@@ -65,41 +84,45 @@ const AdditionForm = () => {
     <>
       <Notification />
       <div
-        className={`wisdom-form-wrapper ${addWisdomModalOpen ? 'active' : ''}`}
+        className={`wisdom-form-wrapper ${formStateClasses}`}
         style={{ backgroundImage: `url(${formBackgroundURL})` }}
       >
-        <div className="close-form"></div>
+        <div className="close-form-wrapper">
+          <div className="close-form" onClick={closeAdditionForm}></div>
+        </div>
         <div className="wisdom-form-content">
           <div className="form-title">
             Привет чувак , тут ты можешь залить свою шутку. Она может быть из одной реплики или
             больше и добавь УРЛ картинки, постарайся по качественнее. Ну давай.
           </div>
           <form onSubmit={handleSubmit(submitWisdom)} className="addition-form" autoComplete="off">
-            <div className="form-inputs">
-              <input
-                name="image"
-                ref={register({ required: true })}
-                placeholder="УРЛ картинки"
-                className={`image-input ${errors.image ? 'error' : ''}`}
-              />
-              {wForm.content.map((_, i) => {
-                return (
-                  <div className="inputs-row" key={i}>
-                    <input
-                      name={`wisdom-${i}`}
-                      ref={register({ required: true })}
-                      className={`input-wisdom ${errors[`wisdom-${i}`] ? 'error' : ''}`}
-                      placeholder={`Реплика ${i + 1}`}
-                    />
-                    <input
-                      name={`author-${i}`}
-                      ref={register()}
-                      className="input-author"
-                      placeholder="Имя"
-                    />
-                  </div>
-                );
-              })}
+            <div className="scroll-wrapper">
+              <div className="form-inputs">
+                <input
+                  name="image"
+                  ref={register({ required: true })}
+                  placeholder="УРЛ картинки"
+                  className={`image-input ${errors.image ? 'error' : ''}`}
+                />
+                {wForm.content.map((_, i) => {
+                  return (
+                    <div className="inputs-row" key={i}>
+                      <input
+                        name={`wisdom-${i}`}
+                        ref={register({ required: true })}
+                        className={`input-wisdom ${errors[`wisdom-${i}`] ? 'error' : ''}`}
+                        placeholder={`Реплика ${i + 1}`}
+                      />
+                      <input
+                        name={`author-${i}`}
+                        ref={register()}
+                        className="input-author"
+                        placeholder="Имя"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             <div className="wisdom-form-controls">
               <button onClick={addRow} type="button" className="button add-row">

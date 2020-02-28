@@ -1,6 +1,6 @@
 import * as Types from './types';
 
-import { ActionInterface, StoreInterface } from 'interfaces';
+import { ActionInterface, StoreInterface, WisdomInterface } from 'interfaces';
 
 const initialState: StoreInterface = {
   wisdoms: null,
@@ -27,7 +27,7 @@ const Store = (state = initialState, action: ActionInterface): StoreInterface =>
     case Types.FETCH_WISDOMS:
       return {
         ...state,
-        wisdoms: action.payload,
+        wisdoms: action.payload.filter((element: WisdomInterface) => element.verified),
       };
     case Types.SET_ISLOADING:
       return {

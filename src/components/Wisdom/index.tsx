@@ -5,7 +5,7 @@ import Spinner from 'components/Spinner';
 import Row from 'components/WisdomRow';
 import { State } from 'interfaces';
 
-import 'assets/styles/components/Wisdom.scss';
+import './styles.scss';
 
 const Wisdom = () => {
   const [animations, setAnimations] = useState({
@@ -14,14 +14,28 @@ const Wisdom = () => {
     finished: false,
   });
   const [classes, setClasses] = useState('animation-end');
+  const [event, setEvent] = useState('');
   const {
     wisdoms,
-    wisdomsMap: { current, next },
+    wisdomsMap: { prev, current, next },
   } = useSelector((s: State) => s.main);
   const history = useHistory();
 
   useEffect(() => {
-    if (current && next) {
+    document.onkeydown = (event: KeyboardEvent) => {
+      if (event.keyCode === 37) {
+        setEvent('left');
+        setAnimations({ ...animations, start: true });
+      }
+      if (event.keyCode === 39) {
+        setEvent('right');
+        setAnimations({ ...animations, start: true });
+      }
+    };
+  });
+
+  useEffect(() => {
+    if (prev && current && next) {
       if (animations.start) {
         setClasses('animation-start');
         setTimeout(() => {
@@ -30,7 +44,19 @@ const Wisdom = () => {
       }
 
       if (animations.inProgress) {
-        history.push(`/wisdoms/${next.id.toString()}`);
+        switch (event) {
+          case 'click':
+            history.push(`/wisdoms/${next.id.toString()}`);
+            break;
+          case 'left':
+            history.push(`/wisdoms/${prev.id.toString()}`);
+            break;
+          case 'right':
+            history.push(`/wisdoms/${next.id.toString()}`);
+            break;
+          default:
+            break;
+        }
         setAnimations({ ...animations, inProgress: false, finished: true });
       }
 
@@ -39,9 +65,10 @@ const Wisdom = () => {
         setAnimations({ ...animations, finished: false });
       }
     }
-  }, [animations, history, wisdoms, next, current]);
+  }, [animations, history, wisdoms, next, current, prev, event]);
 
   const handleClick = () => {
+    setEvent('click');
     setAnimations({ ...animations, start: true });
   };
 
@@ -54,8 +81,10 @@ const Wisdom = () => {
         }}
       >
         <div className="wisdom-content">
-          <div className="one-wisdom-wrapper" onClick={() => handleClick()}>
-            <Row current={current.content} />
+          <div className="clickable-area" onClick={handleClick}>
+            <div className="one-wisdom-wrapper">
+              <Row current={current.content} />
+            </div>
           </div>
         </div>
       </div>

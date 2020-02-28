@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+1.png",
     "content": [
       {
@@ -15,7 +16,8 @@
   },
   {
     "id": 2,
-    "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+2.png",
+    "verified": true,
+    "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+2.jpg",
     "content": [
       {
         "wisdom": "Никогда не бросайте друга в биде",
@@ -25,6 +27,7 @@
   },
   {
     "id": 3,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+3.png",
     "content": [
       {
@@ -43,7 +46,8 @@
   },
   {
     "id": 4,
-    "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+4.png",
+    "verified": true,
+    "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+4.jpg",
     "content": [
       {
         "wisdom": "Я вот в Шанхае был, там в небоскребе туалет как в Японии - куча кнопок, поливает под любым углом...",
@@ -65,6 +69,7 @@
   },
   {
     "id": 5,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+5.png",
     "content": [
       {
@@ -79,6 +84,7 @@
   },
   {
     "id": 6,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+6.png",
     "content": [
       {
@@ -97,7 +103,8 @@
   },
   {
     "id": 7,
-    "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+7.png",
+    "verified": true,
+    "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+7.jpg",
     "content": [
       {
         "wisdom": "Буханочка. То же самое что и Дюймовочка, только Буханочка. Прям спрашивает у зеркальца: Я ль на свете всех бухей, всех прекрасней и синей? А зеркальце отвечает - ты бухая, спору нет...",
@@ -107,6 +114,7 @@
   },
   {
     "id": 8,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+8.png",
     "content": [
       {
@@ -117,6 +125,7 @@
   },
   {
     "id": 9,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+10.png",
     "content": [
       {
@@ -131,6 +140,7 @@
   },
   {
     "id": 10,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+11.png",
     "content": [
       {
@@ -149,7 +159,8 @@
   },
   {
     "id": 11,
-    "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+12.png",
+    "verified": true,
+    "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+12.jpg",
     "content": [
       {
         "wisdom": "Двадцать семь это последний возраст когда можно скурткобейниться",
@@ -159,7 +170,8 @@
   },
   {
     "id": 12,
-    "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+13.png",
+    "verified": true,
+    "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+13.jpg",
     "content": [
       {
         "wisdom": "Как называется эта хуйня с яйцами?",
@@ -173,6 +185,7 @@
   },
   {
     "id": 13,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+14.png",
     "content": [
       {
@@ -183,6 +196,7 @@
   },
   {
     "id": 14,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+16.png",
     "content": [
       {
@@ -197,6 +211,7 @@
   },
   {
     "id": 15,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+17.png",
     "content": [
       {
@@ -211,6 +226,7 @@
   },
   {
     "id": 16,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+19.png",
     "content": [
       {
@@ -225,6 +241,7 @@
   },
   {
     "id": 17,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+20.png",
     "content": [
       {
@@ -239,6 +256,7 @@
   },
   {
     "id": 18,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+21.png",
     "content": [
       {
@@ -257,6 +275,7 @@
   },
   {
     "id": 19,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+23.png",
     "content": [
       {
@@ -267,6 +286,7 @@
   },
   {
     "id": 20,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+24.png",
     "content": [
       {
@@ -277,6 +297,7 @@
   },
   {
     "id": 21,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+25.png",
     "content": [
       {
@@ -295,6 +316,7 @@
   },
   {
     "id": 22,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+26.png",
     "content": [
       {
@@ -309,6 +331,7 @@
   },
   {
     "id": 23,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+27.png",
     "content": [
       {
@@ -331,6 +354,7 @@
   },
   {
     "id": 24,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+28.png",
     "content": [
       {
@@ -349,6 +373,7 @@
   },
   {
     "id": 25,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+29.png",
     "content": [
       {
@@ -363,6 +388,7 @@
   },
   {
     "id": 26,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+30.png",
     "content": [
       {
@@ -381,6 +407,7 @@
   },
   {
     "id": 27,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+31.png",
     "content": [
       {
@@ -399,6 +426,7 @@
   },
   {
     "id": 28,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+32.png",
     "content": [
       {
@@ -413,6 +441,7 @@
   },
   {
     "id": 29,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+33.png",
     "content": [
       {
@@ -435,6 +464,7 @@
   },
   {
     "id": 30,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+34.png",
     "content": [
       {
@@ -457,6 +487,7 @@
   },
   {
     "id": 31,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+35.png",
     "content": [
       {
@@ -479,6 +510,7 @@
   },
   {
     "id": 32,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+36.png",
     "content": [
       {
@@ -501,6 +533,7 @@
   },
   {
     "id": 33,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+37.png",
     "content": [
       {
@@ -515,6 +548,7 @@
   },
   {
     "id": 34,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+38.png",
     "content": [
       {
@@ -533,6 +567,7 @@
   },
   {
     "id": 35,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+39.png",
     "content": [
       {
@@ -547,6 +582,7 @@
   },
   {
     "id": 36,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+40.png",
     "content": [
       {
@@ -565,6 +601,7 @@
   },
   {
     "id": 37,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+41.png",
     "content": [
       {
@@ -579,6 +616,7 @@
   },
   {
     "id": 38,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+43.png",
     "content": [
       {
@@ -597,6 +635,7 @@
   },
   {
     "id": 39,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+44.png",
     "content": [
       {
@@ -619,6 +658,7 @@
   },
   {
     "id": 40,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+45.png",
     "content": [
       {
@@ -629,6 +669,7 @@
   },
   {
     "id": 41,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+47.png",
     "content": [
       {
@@ -639,6 +680,7 @@
   },
   {
     "id": 42,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+49.png",
     "content": [
       {
@@ -649,6 +691,7 @@
   },
   {
     "id": 43,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+50.png",
     "content": [
       {
@@ -659,6 +702,7 @@
   },
   {
     "id": 44,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+52.png",
     "content": [
       {
@@ -669,6 +713,7 @@
   },
   {
     "id": 45,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+54.png",
     "content": [
       {
@@ -679,6 +724,7 @@
   },
   {
     "id": 46,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+55.png",
     "content": [
       {
@@ -693,6 +739,7 @@
   },
   {
     "id": 47,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+57.png",
     "content": [
       {
@@ -707,6 +754,7 @@
   },
   {
     "id": 48,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+58.png",
     "content": [
       {
@@ -721,6 +769,7 @@
   },
   {
     "id": 49,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+59.png",
     "content": [
       {
@@ -731,6 +780,7 @@
   },
   {
     "id": 50,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+60.png",
     "content": [
       {
@@ -749,6 +799,7 @@
   },
   {
     "id": 51,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+61.png",
     "content": [
       {
@@ -763,6 +814,7 @@
   },
   {
     "id": 52,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+62.png",
     "content": [
       {
@@ -773,6 +825,7 @@
   },
   {
     "id": 53,
+    "verified": true,
     "image": "https://titanium-wisdom.s3-eu-west-1.amazonaws.com/images/Frame+63.png",
     "content": [
       {

@@ -1,5 +1,15 @@
 @import 'animations.scss';
 
+@media screen and (max-width: 1650px) {
+  .wisdom-form-wrapper .wisdom-form-content {
+    max-width: 85%;
+  }
+
+  .wisdom-form-wrapper .close-form-wrapper {
+    max-width: 85%;
+  }
+}
+
 @media screen and (max-width: 1366px) {
   html {
     font-size: 26px;
@@ -42,6 +52,39 @@
   .wisdom-row.single {
     max-width: 80%;
   }
+
+  .addition-form input {
+    padding: 8px 15px;
+  }
+
+  .addition-form .image-input {
+    padding: 6px 15px;
+  }
+
+  .addition-form input:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .addition-form .inputs-row input {
+    margin: 0;
+  }
+
+  .addition-form .wisdom-form-controls {
+    margin-top: 20px;
+  }
+
+  .addition-form .scroll-wrapper {
+    max-height: 31vh;
+  }
+
+  .wisdom-form-wrapper .close-form-wrapper {
+    top: 30px;
+  }
+
+  .wisdom-form-wrapper .close-form {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -78,6 +121,13 @@
   .one-wisdom-wrapper {
     max-width: 90%;
   }
+
+  .addition-form input {
+    font-size: 0.3rem;
+  }
+  .addition-form .scroll-wrapper {
+    max-height: 28vh;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -86,10 +136,45 @@
   }
 
   .wisdom-row.single {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
   .wisdom-row.single.small {
     font-size: 0.8rem;
+  }
+
+  .wisdom-form-wrapper .wisdom-form-content {
+    max-width: 95%;
+  }
+
+  .wisdom-form-wrapper .close-form-wrapper {
+    max-width: 95%;
+    top: 15px;
+  }
+
+  .addition-form .image-input {
+    padding: 2px 8px;
+    font-size: 0.25rem;
+  }
+
+  .addition-form input {
+    padding: 4px 8px;
+    border-radius: 3px;
+  }
+
+  .addition-form input:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .addition-form .inputs-row .input-wisdom {
+    width: calc(80% - 10px);
+  }
+
+  .addition-form .inputs-row .input-wisdom {
+    margin-bottom: 0;
+  }
+
+  .addition-form .inputs-row {
+    margin-bottom: 10px;
   }
 }

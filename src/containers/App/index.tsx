@@ -12,7 +12,7 @@ import { State } from 'interfaces';
 import { getWisdoms } from 'api';
 import DummyWisdoms from 'dummy-data/wisdoms.json';
 
-import 'assets/styles/containers/App.scss';
+import './styles.scss';
 
 const App = () => {
   const { wisdoms, steps, firstWisdomId, homeAnimationCompleted } = useSelector(
@@ -26,7 +26,8 @@ const App = () => {
     if (!wisdoms) {
       getWisdoms()
         .then(res => {
-          dispatch(fetchWisdoms(res));
+          // dispatch(fetchWisdoms(res));
+          dispatch(fetchWisdoms(DummyWisdoms));
         })
         .catch(err => {
           console.log(err);

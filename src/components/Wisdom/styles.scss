@@ -1,5 +1,5 @@
-@import '../variables.scss';
-@import '../animations.scss';
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/animations.scss';
 
 .wisdom {
   position: fixed;
@@ -15,6 +15,17 @@
   align-items: center;
   z-index: 4;
   background-color: $color-black;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
 }
 
 .animation-start {
@@ -50,8 +61,17 @@
   }
 }
 
-.one-wisdom-wrapper {
+.clickable-area {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   cursor: pointer;
+}
+
+.one-wisdom-wrapper {
   max-width: 80%;
   max-height: 82%;
   overflow-y: auto;
