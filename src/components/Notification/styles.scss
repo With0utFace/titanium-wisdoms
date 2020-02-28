@@ -12,6 +12,7 @@
   text-transform: none;
   border-radius: 5px;
   background-color: $color-yellow;
+  z-index: 8;
 
   &.success {
     .notification-content {

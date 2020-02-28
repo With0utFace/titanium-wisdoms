@@ -26,8 +26,7 @@ const App = () => {
     if (!wisdoms) {
       getWisdoms()
         .then(res => {
-          // dispatch(fetchWisdoms(res));
-          dispatch(fetchWisdoms(DummyWisdoms));
+          dispatch(fetchWisdoms(res));
         })
         .catch(err => {
           console.log(err);

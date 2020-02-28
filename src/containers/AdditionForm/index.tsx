@@ -35,7 +35,6 @@ const AdditionForm = () => {
   useEffect(() => {
     if (addWisdomModalOpen) {
       setFormStateClasses('active');
-    } else {
     }
   }, [addWisdomModalOpen]);
 

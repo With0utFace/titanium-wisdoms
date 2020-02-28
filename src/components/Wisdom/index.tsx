@@ -7,6 +7,11 @@ import { State } from 'interfaces';
 
 import './styles.scss';
 
+const EVENT = {
+  prev: 'prev',
+  next: 'next',
+};
+
 const Wisdom = () => {
   const [animations, setAnimations] = useState({
     start: false,
@@ -14,7 +19,7 @@ const Wisdom = () => {
     finished: false,
   });
   const [classes, setClasses] = useState('animation-end');
-  const [event, setEvent] = useState('');
+  const [eventDirection, setEventDirection] = useState('');
   const {
     wisdoms,
     wisdomsMap: { prev, current, next },
@@ -24,11 +29,11 @@ const Wisdom = () => {
   useEffect(() => {
     document.onkeydown = (event: KeyboardEvent) => {
       if (event.keyCode === 37) {
-        setEvent('left');
+        setEventDirection(EVENT.prev);
         setAnimations({ ...animations, start: true });
       }
       if (event.keyCode === 39) {
-        setEvent('right');
+        setEventDirection(EVENT.next);
         setAnimations({ ...animations, start: true });
       }
     };
@@ -44,15 +49,12 @@ const Wisdom = () => {
       }
 
       if (animations.inProgress) {
-        switch (event) {
-          case 'click':
+        switch (eventDirection) {
+          case EVENT.next:
             history.push(`/wisdoms/${next.id.toString()}`);
             break;
-          case 'left':
+          case EVENT.prev:
             history.push(`/wisdoms/${prev.id.toString()}`);
-            break;
-          case 'right':
-            history.push(`/wisdoms/${next.id.toString()}`);
             break;
           default:
             break;
@@ -65,10 +67,10 @@ const Wisdom = () => {
         setAnimations({ ...animations, finished: false });
       }
     }
-  }, [animations, history, wisdoms, next, current, prev, event]);
+  }, [animations, history, wisdoms, next, current, prev, eventDirection]);
 
   const handleClick = () => {
-    setEvent('click');
+    setEventDirection(EVENT.next);
     setAnimations({ ...animations, start: true });
   };
 

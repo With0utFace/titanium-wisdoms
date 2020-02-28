@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface WisdomInterface {
   id: number;
-  verified: boolean;
+  verified?: boolean;
   image: string;
   content: {
     wisdom: string;
@@ -55,4 +55,9 @@ export interface NotificationInterface {
 export interface State {
   main: StoreInterface;
   notifications: NotificationInterface;
+}
+
+export interface DispatchInterface {
+  type: string;
+  payload: any;
 }

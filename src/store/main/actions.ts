@@ -10,6 +10,8 @@ import {
   setIsActive,
 } from 'store/notification/actions';
 
+import { Base64 } from 'js-base64';
+
 import { WisdomInterface } from 'interfaces';
 
 export const incrementSteps = () => ({
@@ -38,7 +40,7 @@ export const fetchWisdoms = (data: WisdomInterface[]) => ({
 });
 
 export const setSelectedWisdom = (id: string | undefined) => {
-  return (dispatch: Function) => {
+  return (dispatch: Dispatch<{ type: string; payload?: any } | Function>) => {
     dispatch(setIsLoading());
     dispatch({
       type: Types.SET_SELECTED_WISDOM,
