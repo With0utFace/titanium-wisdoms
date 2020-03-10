@@ -7,12 +7,11 @@ import { setSelectedWisdom } from 'store/main/actions';
 import Wisdom from 'components/Wisdom';
 import Spinner from 'components/Spinner';
 import Navigation from 'containers/Navigation';
-import AdditionForm from 'containers/AdditionForm';
 
 import { State } from 'interfaces';
 
 const WisdomWrapper = () => {
-  const { shouldRedirect, wisdomsMap, addWisdomModalOpen } = useSelector((s: State) => s.main);
+  const { shouldRedirect, wisdomsMap } = useSelector((s: State) => s.main);
   const dispatch = useDispatch();
   const { id } = useParams();
   const history = useHistory();
@@ -29,7 +28,6 @@ const WisdomWrapper = () => {
       <>
         <Navigation />
         <Wisdom />
-        {addWisdomModalOpen && <AdditionForm />}
       </>
     );
   }
